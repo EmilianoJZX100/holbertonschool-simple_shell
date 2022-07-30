@@ -9,7 +9,7 @@ typedef struct structure
 {
 	char h;
 	int(*x)(char**);
-} s_t;
+}s_t;
 
 /**
  * main - splits a string and returns an array of each word of the string
@@ -24,18 +24,18 @@ int main(void)
 	char *input = NULL;
 	char **tokens;
 	size_t len = 0;
-
-while(1)
-{
-	printf("$ ");
-	getline(&input,&len, stdin);
-	if(!input)
-		return 0;
-}	
+	
+	while(1)
+	{
+		printf("$ ");
+		getline(&input,&len, stdin);
+		if(!input)
+			return (0);
+	}
 	tokens = splitter(input, "\n\t\r ");
 	//case part
 	commands(tokens,tokens[0]);
-}
+{
 	/*
 	char *buffer = NULL;
 	size_t len = 0;
@@ -74,7 +74,7 @@ char ** splitter(char*input,char*delim)
 		token = strtok(NULL,delim);
 	}
 	tokens[i] == NULL;
-	return tokens;
+	return (tokens);
 }
 void commands(char**tokens, char*command)
 {
