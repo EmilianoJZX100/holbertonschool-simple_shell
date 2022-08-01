@@ -1,6 +1,6 @@
 ![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
 
-#Simple Shell Project for Holberton School 2022#
+#Simple Shell Project for Holberton School 2022
 
 A simple Linux shell writen in C to play with system calls
 Features
