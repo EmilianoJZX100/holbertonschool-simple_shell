@@ -3,15 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 /**
- * Return: 0
- */
-typedef struct structure
-{
-	char h;
-	int(*x)(char**);
-}s_t;
-
-/**
  * main - splits a string and returns an array of each word of the string
  * Return: 0
  */
