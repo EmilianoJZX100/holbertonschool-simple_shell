@@ -46,6 +46,4 @@ char **splitter(char *input, char *delim)
 	}
 	tokens[i] = NULL;
 	return (tokens);
-
-	printf("Hola Funciono\n");
 }
