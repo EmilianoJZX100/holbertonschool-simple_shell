@@ -4,6 +4,10 @@
  *
  *
  */
-char *_tokenizer(char *str, const char *delim)
+int args_len(char *argv)
 {
-	
+	int i;
+	char *arr[] = 1024;
+
+
+
