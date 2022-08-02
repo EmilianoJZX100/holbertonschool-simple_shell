@@ -29,9 +29,7 @@ int main(void)
 			break;
 
 		argv = strtok(argv, "\n");
-
-		env = getenv("PATH");
-		
+	
 		if (fork() == 0)
 		{
 			if (execve(argv, args, NULL) == -1)
