@@ -7,10 +7,6 @@
  * main - splits a string and returns an array of each word of the string
  * Return: 0
  */
-char **splitter(char *input, char *delim);
-void commands(char **tokens, char *command);
-void mv(char **buffer);
-
 int main(void)
 {
 	char *input = NULL;
