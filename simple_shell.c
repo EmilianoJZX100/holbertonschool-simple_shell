@@ -9,12 +9,7 @@
  *
  * Return: Always 0
  */
-<<<<<<< HEAD
 int main(void)
-=======
-
-int main()
->>>>>>> c538ec607232b3b393ed9056d586887688d359bc
 {
 	char *argv = NULL;
 	char *args[] = {"", NULL};
@@ -45,5 +40,5 @@ int main()
 		}
 	}
 	free(argv);
-return (0);
+	return (0);
 }
