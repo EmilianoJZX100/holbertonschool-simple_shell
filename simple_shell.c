@@ -11,6 +11,8 @@
  */
 int main(void)
 {
+	char *env;
+	char **paths;
 	char *argv = NULL;
 	char *args[] = {"", NULL};
 	size_t len = 1024;
@@ -28,6 +30,8 @@ int main(void)
 
 		argv = strtok(argv, "\n");
 
+		env = getenv("PATH");
+		
 		if (fork() == 0)
 		{
 			if (execve(argv, args, NULL) == -1)
