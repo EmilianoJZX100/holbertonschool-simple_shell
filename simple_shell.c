@@ -2,44 +2,48 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
- * main - splits a string and returns an array of each word of the string
- * Return: 0
+ * main - 
+ *
+ * Return: Always 0
  */
+<<<<<<< HEAD
 int main(void)
+=======
+
+int main()
+>>>>>>> c538ec607232b3b393ed9056d586887688d359bc
 {
-	char *input = NULL;
-	char **tokens;
-	size_t len = 0;
+	char *argv = NULL;
+	char *args[] = {"", NULL};
+	size_t len = 1024;
+	int status;
+	ssize_t characters = 0;
 
 	while (1)
 	{
-		printf("$ ");
-		getline(&input, &len, stdin);
+		if(isatty(STDIN_FILENO) == 1)
+			write(STDOUT_FILENO, "$ ", 2);
+		characters = getline(&argv, &len, stdin);
 
-		if (!input)
-			return (0);
+		if (characters == EOF)
+			break;
+
+		argv = strtok(argv, "\n");
+
+		if (fork() == 0)
+		{
+			if (execve(argv, args, NULL) == -1)
+				perror("Error");
+			break;
+		}
+		else
+		{
+			wait(&status);
+		}
 	}
-	tokens = splitter(input, "\n\t\r ");
-	commands(tokens, tokens[0]);
+	free(argv);
 	return (0);
-}
-
-char **splitter(char *input, char *delim)
-{
-	char *token;
-	int i = 0;
-	char **tokens = malloc(sizeof(char) * 1024);
-
-	token = strtok(input, delim);
-
-	while (token != NULL)
-	{
-		tokens[i] = token;
-		i++;
-		token = strtok(NULL, delim);
-	}
-	tokens[i] = NULL;
-	return (tokens);
 }
