@@ -9,9 +9,10 @@
  *
  * Return: Always 0
  */
-
-int main()
+int main(void)
 {
+	char *env;
+	char **paths;
 	char *argv = NULL;
 	char *args[] = {"", NULL};
 	size_t len = 1024;
@@ -28,7 +29,7 @@ int main()
 			break;
 
 		argv = strtok(argv, "\n");
-
+	
 		if (fork() == 0)
 		{
 			if (execve(argv, args, NULL) == -1)
@@ -41,5 +42,5 @@ int main()
 		}
 	}
 	free(argv);
-return (0);
+	return (0);
 }
