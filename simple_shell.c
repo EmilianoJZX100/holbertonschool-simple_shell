@@ -22,7 +22,6 @@ int main()
 	{
 		if(isatty(STDIN_FILENO) == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-
 		characters = getline(&argv, &len, stdin);
 
 		if (characters == EOF)
@@ -44,22 +43,3 @@ int main()
 	free(argv);
 	return (0);
 }
-
-/**
- * _EOF - checks for end of file
- *
- */
-/*
-void _EOF(char *argv)
-{
-	if (argv)
-	{
-		argv = NULL;
-	}
-
-	if (isatty(STDIN_FILENO))
-		write(STDOUT_FILENO, "\n", 1);
-
-	exit(EXIT_SUCCESS);
-}*/
-

@@ -10,5 +10,4 @@ char **splitter(char *input, char *delim);
 void commands(char **tokens, char *command);
 void mv(char **buffer);
 int _isatty(int fd);
-void _EOF(char *);
 #endif
