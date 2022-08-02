@@ -21,11 +21,12 @@ int main()
 	while (1)
 	{
 		if(isatty(STDIN_FILENO) == 1)
+			write(STDOUT_FILENO, "$ ", 2);
 
-		printf("$ ");
 		characters = getline(&argv, &len, stdin);
+
 		if (characters == EOF)
-			_EOF(argv);
+			break;
 
 		argv = strtok(argv, "\n");
 
@@ -40,6 +41,7 @@ int main()
 			wait(&status);
 		}
 	}
+	free(argv);
 	return (0);
 }
 
@@ -47,6 +49,7 @@ int main()
  * _EOF - checks for end of file
  *
  */
+/*
 void _EOF(char *argv)
 {
 	if (argv)
@@ -58,4 +61,5 @@ void _EOF(char *argv)
 		write(STDOUT_FILENO, "\n", 1);
 
 	exit(EXIT_SUCCESS);
-}         
+}*/
+
