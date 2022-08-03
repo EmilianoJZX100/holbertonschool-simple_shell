@@ -9,38 +9,35 @@
  *
  * Return: Always 0
  */
-int main(void)
+int main(int ac, char **av, char **env)
 {
-	char *env;
-	char **paths;
-	char *argv = NULL;
+	char *str = NULL;
 	char *args[] = {"", NULL};
 	size_t len = 1024;
 	int status;
 	ssize_t characters = 0;
+	(void)ac;
+	(void)av;
 
 	while (1)
 	{
 		if(isatty(STDIN_FILENO) == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-		characters = getline(&argv, &len, stdin);
+		characters = getline(&str, &len, stdin);
 
 		if (characters == EOF)
 			break;
 
-		argv = strtok(argv, "\n");
-	
+		str = strtok(str, "\n");
 		if (fork() == 0)
 		{
-			if (execve(argv, args, NULL) == -1)
+			if (execve(str, args, env) == -1)
 				perror("Error");
 			break;
 		}
 		else
-		{
 			wait(&status);
-		}
 	}
-	free(argv);
+	free(str);
 	return (0);
 }

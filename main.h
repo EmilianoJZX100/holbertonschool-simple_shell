@@ -9,5 +9,7 @@
 char **splitter(char *input, char *delim);
 void commands(char **tokens, char *command);
 void mv(char **buffer);
-int _isatty(int fd);
+char *_strcat(char *dest, char *src);
+int _strlen(char *s);
+int _tokenize(char *argv);
 #endif
