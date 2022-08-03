@@ -29,6 +29,7 @@ int main(int ac, char **av, char **env)
 			break;
 
 		str = strtok(str, "\n");
+
 		if (fork() == 0)
 		{
 			if (execve(str, args, env) == -1)
