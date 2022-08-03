@@ -49,6 +49,28 @@ int _strlen(char *s)
  */
 char *_strdup(const char *str)
 {
-	char *str2 = malloc(1024);
+	char *i;
+	unsigned int j, k;
+
+	if (str == NULL)
+		return (NULL);
+	j = k = 0;
+	while (str[k] != '\0')
+	{
+		k++;
+	}
+	k++;
+	i = malloc(k * sizeof(*str));
+
+	if (i == NULL)
+		return (NULL);
+
+	while (j <= k)
+	{
+		i[j] = str[j];
+		j++;
+	}
+	return (i);
+}
 
 

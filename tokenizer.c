@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * tok - tokenize the string
  * @str: string to be tokenized
@@ -9,19 +10,17 @@ char **tok(char *str, char *delim)
 {
 	int count = 1;
 	int i = 0, j = 0, k = 0;
-	char str2 = strdup(str);
+	char *str2 = _strdup(str);
 	char **arr;
 	char *tok;
 
 	tok = malloc(1024);
 
-	for (str[i])
+	for (; str[i] ; i++)
 	{
-		i++;
-		for (del[j])
+		for (; delim[j] ; j++)
 		{
-			j++;
-			if (del[j] == str[i])
+			if (delim[j] == str[i])
 			{
 				count++;
 			}
@@ -30,7 +29,7 @@ char **tok(char *str, char *delim)
 	arr = malloc(sizeof(char *) * count + 1);
 	{
 		if (!arr)
-			return (NULL)
+			return (NULL);
 	}
 	tok = strtok(str2, delim);
 	arr[k] = tok;
@@ -41,4 +40,38 @@ char **tok(char *str, char *delim)
 		arr[k] = tok;
 	}
 	arr[k] = NULL;
+	return (0);
+}
+/**
+ * *_strdup - duplicates a string
+ *
+ *@str: pointer
+ *
+ *Return: NULL
+ */
+
+char *_strdup(char *str)
+{
+	char *i;
+	unsigned int j, k;
+
+	if (str == NULL)
+		return (NULL);
+	j = k = 0;
+	while (str[k] != '\0')
+	{
+		k++;
+	}
+	k++;
+	i = malloc(k * sizeof(*str));
+
+	if (i == NULL)
+		return (NULL);
+
+	while (j <= k)
+	{
+		i[j] = str[j];
+		j++;
+	}
+	return (i);
 }

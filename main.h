@@ -5,11 +5,11 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
-
 char **splitter(char *input, char *delim);
 void commands(char **tokens, char *command);
 void mv(char **buffer);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
-int _tokenize(char *argv);
+char **tok(char *str, char *delim);
+char *_strdup(char *str);
 #endif
