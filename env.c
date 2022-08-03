@@ -7,6 +7,5 @@
 
 char *_getenv(const char *str)
 {
-
-	return (str);
+	return (char *)(str);
 }

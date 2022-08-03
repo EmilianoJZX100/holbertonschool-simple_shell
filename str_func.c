@@ -20,12 +20,10 @@ char *_strcat(char *dest, char *src)
 		dest[a] = src[b];
 		a++;
 		b++;
-		A
 	}
 	dest[a] = '\0';
 	return (dest);
 }
-A
 /**
  * _strlen - shows length of a string
  * @s: character to check
@@ -47,7 +45,7 @@ int _strlen(char *s)
  *
  * Return: pointer to string
  */
-char *_strdup(const char *str)
+char *_strdup(char *str)
 {
 	char *i;
 	unsigned int j, k;
@@ -72,5 +70,3 @@ char *_strdup(const char *str)
 	}
 	return (i);
 }
-
-
