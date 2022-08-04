@@ -16,7 +16,7 @@ int main(int argc, char **argv, char **env)
 	char *delim = " \n\t";
 	size_t len = 1024;
 	int status;
-	ssize_t characters = 0;
+	char *characters = 0;
 	(void)argc; (void)argv;
 
 	while (1)
