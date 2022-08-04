@@ -24,17 +24,19 @@ int main(int argc, char **argv, char **env)
 		if(isatty(STDIN_FILENO) == 1)
 			write(STDOUT_FILENO, "$ ", 2);
 		characters = getline(&str, &len, stdin);
+
 		if (str == NULL || str[0] == '\n')
 			continue;
 		cmd = tok(str, delim);
+
 		if (cmd[0] == NULL)
 			continue;
 
 		if (characters == EOF)
 			break;
 
-		/*str = strtok(str, "\n");*/
-
+		if (strcmp(characters, "exit") == 0)
+			exit(0);
 
 		if (fork() == 0)
 		{
@@ -43,7 +45,14 @@ int main(int argc, char **argv, char **env)
 			break;
 		}
 		else
-			wait(&status);
+		{
+			wait(&status);		
+			if ((WIFEXITED(status) && (WEXITSTATUS(status) == 0)))
+			{
+				exit(2);
+			}
+		}
+
 	}
 	free(str);
 	return (0);
