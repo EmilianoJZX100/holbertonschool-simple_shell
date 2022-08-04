@@ -7,5 +7,21 @@
 
 char *_getenv(const char *str)
 {
-	return (char *)(str);
+	char *save, *toke;
+	int i = 0;
+
+	while (env)
+	{
+		save = _strdup(env[i]);
+		toke = strtok(save, "=");
+
+		if (strcmp(save, str) == 0)
+		{
+			toke = strtok(NULL, "=");
+			return (toke);
+		}
+		else
+			continue;
+	}
+	return (0);
 }

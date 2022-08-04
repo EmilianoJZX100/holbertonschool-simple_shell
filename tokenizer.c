@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
  * tok - tokenize the string
  * @str: string to be tokenized
@@ -14,6 +15,7 @@ char **tok(char *str, char *delim)
 	char **arr;
 	char *tok;
 
+	delim = " \n\t";
 	tok = malloc(1024);
 
 	for (; str[i] ; i++)
@@ -54,7 +56,7 @@ char **tok(char *str, char *delim)
  *Return: NULL
  */
 
-
+/*
 char *_strdup(char *str)
 {
 	char *i;
@@ -79,6 +81,6 @@ char *_strdup(char *str)
 		j++;
 	}
 	return (i);
-}
+}*/
 
 
