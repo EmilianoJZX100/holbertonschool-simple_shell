@@ -10,9 +10,10 @@ char *_getenv(const char *str)
 	char *save, *toke;
 	int i = 0;
 
-	while (env)
+	while (environ)
 	{
-		save = _strdup(env[i]);
+		i++;
+		save = _strdup(environ[i]);
 		toke = strtok(save, "=");
 
 		if (strcmp(save, str) == 0)

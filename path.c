@@ -4,4 +4,4 @@
  *
  * Return: path
  */
-char _getpath
+/*char _getpath*/
