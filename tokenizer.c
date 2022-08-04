@@ -42,6 +42,7 @@ char **tok(char *str, char *delim)
 	arr[k] = NULL;
 	return (0);
 }
+<<<<<<< HEAD
 /**
  * *_strdup - duplicates a string
  *
@@ -77,3 +78,5 @@ char *_strdup(char *str)
 	return (i);
 }
 */
+=======
+>>>>>>> 05451df541da28481d5dcc1c67635d6e7d5f900b
