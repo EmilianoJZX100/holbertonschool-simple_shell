@@ -5,11 +5,13 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
-char **splitter(char *input, char *delim);
-void commands(char **tokens, char *command);
-void mv(char **buffer);
+extern char **environ;
+/*function protoypes*/
+int _strcmp(char *s1, char *s2);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 char **tok(char *str, char *delim);
 char *_strdup(char *str);
+char *_getenv(const char *str);
+
 #endif

@@ -39,48 +39,11 @@ char **tok(char *str, char *delim)
 
 	tok = strtok(str2, delim);
 	arr[k] = tok;
-	for (k = 1; arr[k]; k++)
+	for (k	= 1; arr[k]; k++)
 	{
 		arr[k] = tok;
 		tok = strtok(NULL, delim);
 	}
 	arr[k] = NULL;
-	return (arr);
+	return(arr);
 }
-
-/**
- * *_strdup - duplicates a string
- *
- *@str: pointer
- *
- *Return: NULL
- */
-
-/*
-char *_strdup(char *str)
-{
-	char *i;
-	unsigned int j, k;
-
-	if (str == NULL)
-		return (NULL);
-	j = k = 0;
-	while (str[k] != '\0')
-	{
-		k++;
-	}
-	k++;
-	i = malloc(k * sizeof(*str));
-
-	if (i == NULL)
-		return (NULL);
-
-	while (j <= k)
-	{
-		i[j] = str[j];
-		j++;
-	}
-	return (i);
-}*/
-
-

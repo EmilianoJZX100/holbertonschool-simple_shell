@@ -4,4 +4,7 @@
  *
  * Return: path
  */
-/*char _getpath*/
+char **_getpath(char *path, char *command)
+{
+	_getenv("PATH=");
+}
