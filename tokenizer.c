@@ -26,23 +26,26 @@ char **tok(char *str, char *delim)
 			}
 		}
 	}
+
 	arr = malloc(sizeof(char *) * count + 1);
+
+	if (!arr)
 	{
-		if (!arr)
-			return (NULL);
+		perror("Error");
+		return (NULL);
 	}
+
 	tok = strtok(str2, delim);
 	arr[k] = tok;
-
 	for (k = 1; arr[k]; k++)
 	{
-		tok = strtok(NULL, delim);
 		arr[k] = tok;
+		tok = strtok(NULL, delim);
 	}
 	arr[k] = NULL;
-	return (0);
+	return (arr);
 }
-<<<<<<< HEAD
+
 /**
  * *_strdup - duplicates a string
  *
@@ -78,5 +81,4 @@ char *_strdup(char *str)
 	return (i);
 }
 */
-=======
->>>>>>> 05451df541da28481d5dcc1c67635d6e7d5f900b
+

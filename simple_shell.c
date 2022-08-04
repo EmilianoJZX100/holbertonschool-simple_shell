@@ -11,13 +11,11 @@
  */
 int main(int ac, char **av, char **env)
 {
-	char *str = NULL;
-	char *args[] = {"", NULL};
+	char *str = NULL, char *args[] = {"", NULL};
 	size_t len = 1024;
 	int status;
 	ssize_t characters = 0;
-	(void)ac;
-	(void)av;
+	(void)ac, (void)av;
 
 	while (1)
 	{
