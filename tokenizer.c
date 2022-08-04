@@ -49,6 +49,7 @@ char **tok(char *str, char *delim)
  *
  *Return: NULL
  */
+/*
 
 char *_strdup(char *str)
 {
@@ -75,3 +76,4 @@ char *_strdup(char *str)
 	}
 	return (i);
 }
+*/
