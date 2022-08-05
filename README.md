@@ -1,4 +1,5 @@
-#Simple Shell
+# Simple Shell
+
 In this project we created a simple command interpreter written in C, which works as the original Shell, we can execute commands and obtain its actual output.
 
 ## Shell Files
@@ -14,7 +15,7 @@ In this project we created a simple command interpreter written in C, which work
 | man_1_simple_shell | shell manual |
 | AUTHORS | people who contributed to repository |
 
-##General Requirements
+## General Requirements
 
 - Allowed editors: vi, vim, emacs
 - All files will be compiled on Ubuntu 20.04 LTS using gcc, using the options - - -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -25,7 +26,8 @@ In this project we created a simple command interpreter written in C, which work
 - All your header files should be include guarded
 - Use system calls only when needed
 
-##Let's get started!
+## Let's get started!
+
 First we need to compile our shell:
 
 ```sh
@@ -37,7 +39,8 @@ Then, we just start our shell by typing:
 ```sh
 ./hsh
 ```
-##Testing our Shell
+## Testing our Shell
+
 Our Shell works like this in interactive mode:
 
 ```sh
@@ -63,12 +66,12 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 ```
-##Overview
+## Overview
 
 A shell interface gives the user a prompt, in this case we established a "$", after which the next command is entered.
 
 The main() function continually loops as long as should run equals 1; when the user enters exit at the prompt, your program will set should run to 0 and terminate.
 
-##Authors
+## Authors
 - Emiliano Rodriguez - [GitHub](https://github.com/EmilianoJZX100)
 - Victoria Márquez - [GitHub](https://github.com/vicomarquez)
