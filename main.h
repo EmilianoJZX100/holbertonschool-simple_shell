@@ -16,4 +16,7 @@ char *_strdup(char *str);
 char *_getenv(char *str);
 char *_getenv2(char **env, char *str);
 char *_which(char *fullpath, ...);
+char *str_concat(char *s1, char *s2);
+int _putchar(char c);
+int _putchar_s(char *s);
 #endif
