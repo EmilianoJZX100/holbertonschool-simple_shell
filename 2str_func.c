@@ -25,3 +25,15 @@ int _putchar_s(char *s)
 		_putchar(s[i]);
 	return (i);
 }
+
+/**
+ *
+ * _prompt - function that prints the prompt
+*/
+
+void _prompt(void)
+{
+	if(isatty(STDIN_FILENO) == 1)
+		write(STDOUT_FILENO, "$ ", 2);
+}
+

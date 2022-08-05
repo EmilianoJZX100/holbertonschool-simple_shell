@@ -4,6 +4,8 @@
  *
  * Return: path
  */
+
+/*
 char *_which(char *fullpath, ...)
 {
 	char *toks = NULL, *save = NULL, *str1 = NULL, *str2 = NULL;
@@ -43,3 +45,4 @@ char *_which(char *fullpath, ...)
 	}
 	return (str2);
 	}
+}*/
