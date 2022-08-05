@@ -13,7 +13,7 @@ char *_which(char *fullpath, ...)
 	char **args2;
 
 	save = _getenv("PATH");
-	args = tok(save, ":") + 2;
+	args = _reps(save, ':') + 2;
 	args2 = malloc(args * sizeof(char *));
 
 	if (args2 == NULL)

@@ -46,7 +46,8 @@ int main(int argc, char **argv, char **env)
 		}
 		if(_strcmp(cmd[0], "env") == 0)
 		{
-			env
+			printf(environ);
+			continue;
 		}
 
 		if (fork() == 0)
