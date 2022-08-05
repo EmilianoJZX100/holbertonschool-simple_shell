@@ -1,5 +1,8 @@
-# Simple Shell
 ![Simple Shell](https://wallpaper.dog/large/20512806.jpg)
+
+# Simple Shell
+
+## Synopsis
 
 In this project we created a simple command interpreter written in C, which works as the original Shell, we can execute commands and obtain its actual output.
 
@@ -26,6 +29,23 @@ In this project we created a simple command interpreter written in C, which work
 - No more than 5 functions per file
 - All your header files should be include guarded
 - Use system calls only when needed
+
+## Learning Objectives
+
+- Who designed and implemented the original Unix operating system
+- Who wrote the first version of the UNIX shell
+- Who invented the B programming language (the direct predecessor to the C programming language)
+- Who is Ken Thompson
+- How does a shell work
+- What is a pid and a ppid
+- How to manipulate the environment of the current process
+- What is the difference between a function and a system call
+- How to create processes
+- What are the three prototypes of main
+- How does the shell use the PATH to find the programs
+- How to execute another program with the execve system call
+- How to suspend the execution of a process until one of its children terminates
+- What is EOF / “end-of-file”?
 
 ## Let's get started!
 
@@ -69,9 +89,10 @@ $
 ```
 ## Overview
 
-A shell interface gives the user a prompt, in this case we established a "$", after which the next command is entered.
+A shell interface gives the user a prompt, in this case we established a "$", after which the command is entered. Everything that the user types after the command is called an "argument". The shell separates these words using as a delimiter an space(" ").
+After this we check if it is a built-in command or not, if it is then it is executed, and if not we search for it in the PATH environmental variable for a directory that contains an executable file by that name.
 
-The main() function continually loops as long as should run equals 1; when the user enters exit at the prompt, your program will set should run to 0 and terminate.
+The main() function continually loops as long as should run equals 1; when the user enters exit at the prompt, the program will terminate.
 
 ## Authors
 - Emiliano Rodriguez - [GitHub](https://github.com/EmilianoJZX100)

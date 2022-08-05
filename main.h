@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+
 extern char **environ;
 /*function protoypes*/
 int _strcmp(char *s1, char *s2);
@@ -14,4 +15,5 @@ char **tok(char *str, char *delim);
 char *_strdup(char *str);
 char *_getenv(char *str);
 char *_getenv2(char **env, char *str);
+char *_which(char *fullpath, ...);
 #endif
