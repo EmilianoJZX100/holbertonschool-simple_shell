@@ -15,7 +15,6 @@ char **tok(char *str, char *delim)
 	char **arr;
 	char *tok;
 
-	delim = " \n\t";
 	tok = malloc(1024);
 
 	for (; str[i] ; i++)
@@ -39,11 +38,11 @@ char **tok(char *str, char *delim)
 
 	tok = strtok(str2, delim);
 	arr[k] = tok;
-	for (k	= 1; arr[k]; k++)
+	for (k = 1; arr[k]; k++)
 	{
 		arr[k] = tok;
 		tok = strtok(NULL, delim);
 	}
 	arr[k] = NULL;
-	return(arr);
+	return (arr);
 }

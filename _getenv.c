@@ -16,7 +16,7 @@ char *_getenv(const char *str)
 		save = _strdup(environ[i]);
 		toke = strtok(save, "=");
 
-		if (strcmp(save, str) == 0)
+		if (_strcmp(save, str) == 0)
 		{
 			toke = strtok(NULL, "=");
 			return (toke);
