@@ -16,13 +16,8 @@ int main(int argc, char **argv, char **env)
 	char *delim = " \n\t";
 	size_t len = 1024;
 	int status;
-<<<<<<< HEAD
-	(void)argc;
-	(void)argv;
-=======
 	char *characters = 0;
 	(void)argc; (void)argv;
->>>>>>> d9c0f813efdf9800378615748d0e20d3b6397d77
 
 	while (1)
 	{
@@ -46,19 +41,13 @@ int main(int argc, char **argv, char **env)
 		}
 
 		if (cmd[0][0] != '/')
-		{char **env
-		 char *str
-			for (env[i])
-				for (env[i][j])
-					if (env[i][j] == str[j])
-						count++;
+	
 		 if (count == strlen(str))
 			 return(strdup(env[i]));
 		 else
 			 return (null);
 
 		}
-
 		if (fork() == 0)
 		{
 			if (execve(cmd[0], args, env) == -1)

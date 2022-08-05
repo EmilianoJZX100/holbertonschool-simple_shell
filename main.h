@@ -12,6 +12,6 @@ char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 char **tok(char *str, char *delim);
 char *_strdup(char *str);
-char *_getenv(const char *str);
+char *_getenv(char *str);
 char *_getenv2(char **env, char *str);
 #endif

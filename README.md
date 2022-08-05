@@ -1,19 +1,6 @@
-
-
-## Simple Shell Project for Holberton School 2022
-
-### A simple Linux shell writen in C to play with system calls
-
-This is the final project of 1st trimester Full-Stack Developer Course
-
-This project consists of designing a shell interface that accepts user commands and then executes each command in a separate process. 
-
-#### Allowed functions and system calls
-
-
-	
 #Simple Shell
-In this project we created a simple command interpreter which works as the original Shell, we can execute commands and show its output.
+In this project we created a simple command interpreter written in C, which works as the original Shell, we can execute commands and obtain its actual output.
+
 ## Shell Files
 
 | File | Description |
@@ -26,31 +13,44 @@ In this project we created a simple command interpreter which works as the origi
 | str_func.c | all functions used to interact with strings |
 | man_1_simple_shell | shell manual |
 | AUTHORS | people who contributed to repository |
-#### Overview
 
-A shell interface gives the user a prompt, after which the next command is entered.
+##General Requirements
 
-The main() function continually loops as long as should run equals 1; when the user enters exit at the prompt, your program will set should run to 0 and terminate.
+- Allowed editors: vi, vim, emacs
+- All files will be compiled on Ubuntu 20.04 LTS using gcc, using the options - - -Wall -Werror -Wextra -pedantic -std=gnu89
+- All files should end with a new line
+- The code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+- The shell should not have any memory leaks
+- No more than 5 functions per file
+- All your header files should be include guarded
+- Use system calls only when needed
 
-#### Compilation
+##Let's get started!
+First we need to compile our shell:
 
-The shell is compiled this way:
-
+```sh
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+```
 
-#### Testing
+Then, we just start our shell by typing:
 
-Your shell should work like this in interactive mode:
+```sh
+./hsh
+```
+##Testing our Shell
+Our Shell works like this in interactive mode:
 
+```sh
 $ ./hsh
 ($) /bin/ls
 hsh main.c shell.c
 ($)
 ($) exit
 $
+```
+And like this in non-interactive mode:
 
-But also in non-interactive mode:
-
+```sh
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 $
@@ -62,4 +62,13 @@ $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
+```
+##Overview
 
+A shell interface gives the user a prompt, in this case we established a "$", after which the next command is entered.
+
+The main() function continually loops as long as should run equals 1; when the user enters exit at the prompt, your program will set should run to 0 and terminate.
+
+##Authors
+- Emiliano Rodriguez - [GitHub](https://github.com/EmilianoJZX100)
+- Victoria Márquez - [GitHub](https://github.com/vicomarquez)

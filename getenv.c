@@ -5,7 +5,7 @@
  * Return: string with the value of the requested environment variable
  */
 
-char *_getenv(const char *str)
+char *_getenv(char *str)
 {
 	char *save, *toke;
 	int i = 0;

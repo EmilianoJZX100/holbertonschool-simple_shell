@@ -14,8 +14,8 @@ int main(int argc, char **argv, char **env)
 {
 	char *str = NULL, **cmd = NULL, *args[] = {"", NULL};
 	size_t len = 1024;
-	char *path;
-	int status;
+	char **path;
+	int status, i = 0, arg = 0;
 	(void)argc;
 	(void)argv;
 
@@ -45,6 +45,9 @@ int main(int argc, char **argv, char **env)
 			path = tok(*env, ":");
 
 		}
+		for (; path[i] ; i++)
+			arg++;
+
 		if (fork() == 0)
 		{
 			if (execve(cmd[0], args, env) == -1)
