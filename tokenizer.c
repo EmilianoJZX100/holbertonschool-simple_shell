@@ -11,7 +11,7 @@ char **tok(char *str, char *delim)
 {
 	int count = 1;
 	int i = 0, j = 0, k = 0;
-	char *str2 = _strdup(str);
+	/*char *str2 = _strdup(str);*/
 	char **arr;
 	char *tok;
 
@@ -27,23 +27,22 @@ char **tok(char *str, char *delim)
 			}
 		}
 	}
-
-	arr = malloc(sizeof(char *) * count + 1);
-
+	arr = malloc(sizeof(char *) * count + 2);
 	if (!arr)
 	{
 		perror("Error");
 		return (NULL);
 	}
 
-	tok = strtok(str2, delim);
+	tok = strtok(str, delim);
 	arr[k] = tok;
-	for (k = 1; arr[k]; k++)
+	k++;
+	for (; k < count + 1; k++)
 	{
-		arr[k] = _strdup(tok);
+		/*arr[k] = _strdup(tok);*/
 		tok = strtok(NULL, delim);
+		arr[k] = tok;
 	}
-	free(str2);
 	arr[k] = NULL;
 	return (arr);
 }

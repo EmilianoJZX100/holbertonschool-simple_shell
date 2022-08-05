@@ -5,7 +5,6 @@
  * Return: path
  */
 
-/*
 char *_which(char *fullpath, ...)
 {
 	char *toks = NULL, *save = NULL, *str1 = NULL, *str2 = NULL;
@@ -14,7 +13,7 @@ char *_which(char *fullpath, ...)
 	char **args2;
 
 	save = _getenv("PATH");
-	args = tok(save, ':') + 2;
+	args = _reps(save, ':') + 2;
 	args2 = malloc(args * sizeof(char *));
 
 	if (args2 == NULL)
@@ -23,7 +22,7 @@ char *_which(char *fullpath, ...)
 	toks = strtok(save, ":");
 	while (toks)
 	{
-		i++:
+		i++;
 		args2[i] = _strdup(toks);
 		toks = strtok(NULL, ":");
 	}
@@ -38,11 +37,10 @@ char *_which(char *fullpath, ...)
 		free(str1);
 		free(str2);
 	}
-	for (args2[i])
+	while (args2[i])
 	{
 		i++;
 		free(args2[i]);
 	}
 	return (str2);
-	}
-}*/
+}

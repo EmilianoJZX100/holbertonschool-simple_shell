@@ -36,3 +36,23 @@ void _prompt(void)
 	if(isatty(STDIN_FILENO) == 1)
 		write(STDOUT_FILENO, "$ ", 2);
 }
+
+/**
+ * _reps - counts delimiter chars
+ *
+ *Return: count
+ */
+int _reps(char *str, char delim)
+{
+	int i = 0;
+	int len = _strlen(str);
+	int sum = 0;
+
+	while (i <= len)
+	{
+		i++;
+		if (str[i] == delim)
+			sum++;
+	}
+	return (sum);
+}

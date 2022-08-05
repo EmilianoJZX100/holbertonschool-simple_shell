@@ -32,6 +32,10 @@ int main(int argc, char **argv, char **env)
 			continue;
 		cmd = tok(str, " \n\t\r");
 		/*printf("%s.\n", cmd[0]);*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26316b10bd5c9d7fe6272b0f51fe9ccecde0ce41
 		if (cmd[0] == NULL)
 			continue;
 		if (_strcmp(cmd[0], "exit") == 0)

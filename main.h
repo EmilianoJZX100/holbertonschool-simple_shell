@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
 extern char **environ;
 /*function protoypes*/
@@ -20,4 +21,5 @@ char *str_concat(char *s1, char *s2);
 int _putchar(char c);
 int _putchar_s(char *s);
 void _prompt(void);
+int _reps(char *str, char delim);
 #endif
