@@ -27,21 +27,20 @@ char **tok(char *str, char *delim)
 			}
 		}
 	}
-
-	arr = malloc(sizeof(char *) * count + 1);
-
+	arr = malloc(sizeof(char *) * count + 2);
 	if (!arr)
 	{
 		perror("Error");
 		return (NULL);
 	}
 
-	tok = strtok(str2, delim);
+	tok = strtok(str, delim);
 	arr[k] = tok;
-	for (k = 1; arr[k]; k++)
+	k++;
+	for (; k < count + 1; k++)
 	{
-		arr[k] = tok;
 		tok = strtok(NULL, delim);
+		arr[k] = tok;
 	}
 	arr[k] = NULL;
 	return (arr);
