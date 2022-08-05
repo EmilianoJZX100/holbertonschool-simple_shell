@@ -39,14 +39,10 @@ char **tok(char *str, char *delim)
 	k++;
 	for (; k < count + 1; k++)
 	{
-<<<<<<< HEAD
-=======
-		arr[k] = _strdup(tok);
->>>>>>> 898ce9d6a47dbe5b7e869ab0e841c54b4edf38a8
+		/*arr[k] = _strdup(tok);*/
 		tok = strtok(NULL, delim);
 		arr[k] = tok;
 	}
-	free(str2);
 	arr[k] = NULL;
 	return (arr);
 }

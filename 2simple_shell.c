@@ -16,8 +16,8 @@ int main(int argc, char **argv, char **env)
 {
 	char *str = NULL, **cmd = NULL, *args[] = {"", NULL};
 	size_t len = 1024;
-	char **path;
-	int status, i = 0, arg = 0;
+	/*char **path;*/
+	int status;/*, i = 0, arg = 0;*/
 	(void)argc;
 	(void)argv;
 
