@@ -52,7 +52,7 @@ int main(int argc, char **argv, char **env)
 
 		if (fork() == 0)
 		{
-			if (execve(cmd[0], cmd, env) == -1)
+			f (execve(cmd[0], cmd, env) == -1)
 				perror("Error");
 		}
 		/*else if (fork() == -1)
