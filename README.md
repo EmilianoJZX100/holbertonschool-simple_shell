@@ -16,6 +16,7 @@ In this project we created a simple command interpreter written in C, which work
 | getpath.c | gets the "PATH" variable |
 | tokenizer.c | separates string by delimiter and saves a copy |
 | str_func.c | all functions used to interact with strings |
+| 2str_func.c | more functions to interact with characters and strings |
 | man_1_simple_shell | shell manual |
 | AUTHORS | people who contributed to repository |
 
