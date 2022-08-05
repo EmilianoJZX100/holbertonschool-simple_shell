@@ -21,7 +21,7 @@ char **tok(char *str, char *delim)
 	{
 		for (; delim[j] ; j++)
 		{
-			if (delim[j] == str[i])
+			if (delim[j] == str[i] && i > 0 && str[i -1] != delim[j]) 
 			{
 				count++;
 			}
@@ -40,9 +40,10 @@ char **tok(char *str, char *delim)
 	arr[k] = tok;
 	for (k = 1; arr[k]; k++)
 	{
-		arr[k] = tok;
+		arr[k] = _strdup(tok);
 		tok = strtok(NULL, delim);
 	}
+	free(str2);
 	arr[k] = NULL;
 	return (arr);
 }

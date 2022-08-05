@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **env)
 		if (str == NULL || str[0] == '\n')
 			continue;
 		cmd = tok(str, " \n\t\r");
-		printf("%s.\n", cmd[0]);
+		/*printf("%s.\n", cmd[0]);*/
 		if (cmd[0] == NULL)
 			continue;
 		if (_strcmp(cmd[0], "exit") == 0)
