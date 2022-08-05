@@ -5,24 +5,24 @@
 #include <unistd.h>
 
 /**
- * main -
- *
- *
- * Return: Always 0
+ * main - function that gets the input from the user & executes a command
+ * @argc: counter
+ * @argv: arguments
+ * @env: enviromental variable
+ * Return: 0 or 2
  */
 int main(int argc, char **argv, char **env)
 {
-	char *str = NULL, **cmd = NULL, *args[] = {"", NULL}; 
-	char *delim = " \n\t";
+	char *str = NULL, **cmd = NULL, *args[] = {"", NULL};
 	size_t len = 1024;
-	int status;
-	char *characters = 0;
-	(void)argc; (void)argv;
+	char **path;
+	int status, i = 0, arg = 0;
+	(void)argc;
+	(void)argv;
 
 	while (1)
 	{
-		if(isatty(STDIN_FILENO) == 1)
-			write(STDOUT_FILENO, "$ ", 2);
+		_prompt();
 		if (getline(&str, &len, stdin) == -1)
 		{
 			free(str);
@@ -30,24 +30,24 @@ int main(int argc, char **argv, char **env)
 		}
 		if (str == NULL || str[0] == '\n')
 			continue;
-		cmd = tok(str, delim);
-
+		cmd = tok(str, " \n\t\r");
+		printf("%s.\n", cmd[0]);
 		if (cmd[0] == NULL)
 			continue;
-		if (_strcmp(str, "exit") == 0)
+		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			free(str);
 			return (0);
 		}
-
 		if (cmd[0][0] != '/')
-	
-		 if (count == strlen(str))
-			 return(strdup(env[i]));
-		 else
-			 return (null);
+		{
+			*env = _getenv("PATH");
+			path = tok(*env, ":");
 
 		}
+		for (; path[i] ; i++)
+			arg++;
+
 		if (fork() == 0)
 		{
 			if (execve(cmd[0], args, env) == -1)
