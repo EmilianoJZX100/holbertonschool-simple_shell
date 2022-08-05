@@ -25,12 +25,6 @@ int _putchar_s(char *s)
 		_putchar(s[i]);
 	return (i);
 }
-<<<<<<< HEAD
-/**
- * _prompt - function that prints a prompt
- */
-void _prompt(void)
-=======
 
 /**
  *
@@ -42,5 +36,3 @@ void _prompt(void)
 	if(isatty(STDIN_FILENO) == 1)
 		write(STDOUT_FILENO, "$ ", 2);
 }
-
->>>>>>> ff396f06946c88a3884faa3fd7f8462463f976ed
