@@ -1,4 +1,5 @@
 # Simple Shell
+![Simple Shell](https://wallpaper.dog/large/20512806.jpg)
 
 In this project we created a simple command interpreter written in C, which works as the original Shell, we can execute commands and obtain its actual output.
 
