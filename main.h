@@ -22,4 +22,5 @@ int _putchar(char c);
 int _putchar_s(char *s);
 void _prompt(void);
 int _reps(char *str, char delim);
+void print_environ(char **buff);
 #endif
