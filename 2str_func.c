@@ -25,3 +25,7 @@ int _putchar_s(char *s)
 		_putchar(s[i]);
 	return (i);
 }
+/**
+ * _prompt - function that prints a prompt
+ */
+void _prompt(void)
