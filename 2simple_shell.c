@@ -11,6 +11,7 @@
  * @env: enviromental variable
  * Return: 0 or 2
  */
+/*
 int main(int argc, char **argv, char **env)
 {
 	char *str = NULL, **cmd = NULL, *args[] = {"", NULL};
@@ -25,7 +26,7 @@ int main(int argc, char **argv, char **env)
 		_prompt();
 		if (getline(&str, &len, stdin) == -1)
 		{
-			/*free(str);*/
+			free(str);
 			exit(0);
 		}
 		if (str == NULL || str[0] == '\n')
@@ -63,4 +64,4 @@ int main(int argc, char **argv, char **env)
 	}
 	free(str);
 	return (0);
-}
+}*/
