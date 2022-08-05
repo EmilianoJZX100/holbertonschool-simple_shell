@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv, char **env)
 {
-	char *str = NULL, **cmd = NULL, *args[] = {"", NULL};
+	char *str = NULL, **cmd = NULL; /**args[] = {"", NULL};*/
 	size_t len = 1024;
 	/*char **path;*/
 	int status;/*, i = 0, arg = 0;*/
@@ -24,6 +24,7 @@ int main(int argc, char **argv, char **env)
 	while (1)
 	{
 		_prompt();
+
 		if (getline(&str, &len, stdin) == -1)
 		{
 			free(str);
@@ -32,7 +33,6 @@ int main(int argc, char **argv, char **env)
 		if (str == NULL || str[0] == '\n')
 			continue;
 		cmd = tok(str, " \n\t");
-
 		if (cmd[0] == NULL)
 		{
 			free(cmd);
@@ -44,12 +44,10 @@ int main(int argc, char **argv, char **env)
 			free(str);
 			return (0);
 		}
-		
-		/*if (cmd[0][0] != '/')
+		if(_strcmp(cmd[0], "env") == 0)
 		{
-			*env = _getenv("PATH");
-			path = tok(*env, ":");
-		}*/
+			env
+		}
 
 		if (fork() == 0)
 		{
@@ -62,7 +60,9 @@ int main(int argc, char **argv, char **env)
 		{
 			wait(&status);		
 			if ((WIFEXITED(status) && (WEXITSTATUS(status) == 0)))
+			{
 				;
+			}
 		}
 	}
 	free(str);
