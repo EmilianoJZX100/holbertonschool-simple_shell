@@ -16,8 +16,13 @@ int main(int argc, char **argv, char **env)
 	char *delim = " \n\t";
 	size_t len = 1024;
 	int status;
+<<<<<<< HEAD
 	(void)argc;
 	(void)argv;
+=======
+	char *characters = 0;
+	(void)argc; (void)argv;
+>>>>>>> d9c0f813efdf9800378615748d0e20d3b6397d77
 
 	while (1)
 	{
