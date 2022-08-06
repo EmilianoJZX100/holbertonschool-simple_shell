@@ -69,7 +69,8 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (-1);
 }
-/*_strcat - copies a string
+/**
+ * _strcat - copies a string
  * @dest: character to check
  * @src: character to check
  * Return: the length of a string
@@ -111,7 +112,7 @@ int _strlen(char *s)
 
 /**
  * _strdup - duplicates string
- *
+ * @str: string
  * Return: pointer to string
  */
 char *_strdup(char *str)
