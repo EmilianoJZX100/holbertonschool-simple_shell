@@ -30,7 +30,7 @@ char **tok(char *str, char *delim)
 	if (!arr)
 	{
 		perror("Error");
-		return (NULL);
+		return ('\0');
 	}
 
 	tok = strtok(str, delim);
@@ -38,10 +38,10 @@ char **tok(char *str, char *delim)
 	k++;
 	for (; k < count + 1; k++)
 	{
-		tok = strtok(NULL, delim);
+		tok = strtok('\0', delim);
 		arr[k] = tok;
 	}
 	free(tok);
-	arr[k] = NULL;
+	arr[k] = '\0';
 	return (arr);
 }
