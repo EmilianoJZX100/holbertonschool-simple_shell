@@ -26,7 +26,7 @@ char **tok(char *str, char *delim)
 			}
 		}
 	}
-	arr = malloc(sizeof(char *) * count + 2);
+	arr = malloc(sizeof(char) * 1024);
 	if (!arr)
 	{
 		perror("Error");
