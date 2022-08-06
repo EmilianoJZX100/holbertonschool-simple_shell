@@ -41,6 +41,7 @@ char **tok(char *str, char *delim)
 		tok = strtok(NULL, delim);
 		arr[k] = tok;
 	}
+	free(tok);
 	arr[k] = NULL;
 	return (arr);
 }
