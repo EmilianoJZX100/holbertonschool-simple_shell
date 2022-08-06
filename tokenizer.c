@@ -42,8 +42,5 @@ char **tok(char *str, char *delim)
 		arr[k] = tok;
 	}
 	arr[k] = NULL;
-	free(tok);
-	free(tok);
-	arr[k] = '\0';
 	return (arr);
 }
