@@ -14,17 +14,15 @@
 
 int main(int argc, char **argv, char **env)
 {
-	char *str = NULL, **cmd = NULL; /**args[] = {"", NULL};*/
+	char *str = NULL, **cmd = NULL;
 	size_t len = 1024;
-	/*char **path;*/
-	int status;/*, i = 0, arg = 0;*/
+	int status;
 	(void)argc;
 	(void)argv;
 
 	while (1)
 	{
 		_prompt();
-
 		if (getline(&str, &len, stdin) == -1)
 		{
 			free(str);
@@ -52,11 +50,9 @@ int main(int argc, char **argv, char **env)
 
 		if (fork() == 0)
 		{
-			if (execve(cmd[0], cmd, env) == -1)
+			if (execve(cmd_discriminator(cmd[0]), cmd, env) == -1)
 				perror("Error");
 		}
-		/*else if (fork() == -1)
-			perror("Error");*/
 		else
 		{
 			wait(&status);		
