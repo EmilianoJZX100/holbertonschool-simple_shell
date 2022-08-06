@@ -11,12 +11,12 @@
  * @env: enviromental variable
  * Return: 0 or 2
  */
+
 int main(int argc, char **argv, char **env)
 {
-	char *str = NULL, **cmd = NULL, *args[] = {"", NULL};
+	char *str = NULL, **cmd = NULL;
 	size_t len = 1024;
-	char **path;
-	int status, i = 0, arg = 0;
+	int status;
 	(void)argc;
 	(void)argv;
 
@@ -30,37 +30,38 @@ int main(int argc, char **argv, char **env)
 		}
 		if (str == NULL || str[0] == '\n')
 			continue;
-		cmd = tok(str, " \n\t\r");
-		/*printf("%s.\n", cmd[0]);*/
+		cmd = tok(str, " \n\t");
 		if (cmd[0] == NULL)
+		{
+			free(cmd);
+			free(str);
 			continue;
-		if (_strcmp(cmd[0], "exit") == 0)
+		}
+		if(_strcmp(cmd[0], "exit") == 0)
 		{
 			free(str);
 			return (0);
 		}
-		if (cmd[0][0] != '/')
+		if(_strcmp(cmd[0], "env") == 0)
 		{
-			*env = _getenv("PATH");
-			path = tok(*env, ":");
-
+			print_environ(environ);
+			continue;
 		}
-		for (; path[i] ; i++)
-			arg++;
-
 
 		if (fork() == 0)
 		{
-			if (execve(cmd[0], args, env) == -1)
+			if (execve(cmd_discriminator(cmd[0]), cmd, env) == -1)
 				perror("Error");
 		}
 		else
 		{
 			wait(&status);		
 			if ((WIFEXITED(status) && (WEXITSTATUS(status) == 0)))
-				exit(2);
+			{
+				;
+			}
 		}
 	}
 	free(str);
-	return (0);
+	return (status);
 }
