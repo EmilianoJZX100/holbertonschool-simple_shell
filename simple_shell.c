@@ -15,6 +15,7 @@ int main(int argc, char **argv, char **env)
 	char *str = NULL, **cmd = NULL;
 	size_t len = 1024;
 	int status;
+	int i;
 	(void)argc, (void)argv;
 	while (1)
 	{
@@ -49,6 +50,13 @@ int main(int argc, char **argv, char **env)
 				perror("Error");
 		}
 		wait(&status);
+<<<<<<< HEAD
+=======
+		for (i = 0; cmd[i]; i++)
+		{
+			free(cmd[i]);
+		}
+>>>>>>> d3c5eb8dc01dccd0ae43486c32b3c8b984d3bcf5
 		free(cmd);
 	}
 	free(str);
