@@ -2,6 +2,7 @@
 /**
  * _which - gets the path in the environment variables
  *
+ *@fullpath: string
  * Return: path
  */
 

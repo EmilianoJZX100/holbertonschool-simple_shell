@@ -27,19 +27,19 @@ int _putchar_s(char *s)
 }
 
 /**
- *
- * _prompt - function that prints the prompt
+ *_prompt - function that prints the prompt
 */
 
 void _prompt(void)
 {
-	if(isatty(STDIN_FILENO) == 1)
+	if (isatty(STDIN_FILENO) == 1)
 		write(STDOUT_FILENO, "$ ", 2);
 }
 
 /**
- * _reps - counts delimiter chars
- *
+ *_reps - counts delimiter chars
+ *@str: string
+ *@delim: delimiter
  *Return: count
  */
 int _reps(char *str, char delim)

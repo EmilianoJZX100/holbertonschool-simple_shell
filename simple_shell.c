@@ -37,12 +37,12 @@ int main(int argc, char **argv, char **env)
 			free(str);
 			continue;
 		}
-		if(_strcmp(cmd[0], "exit") == 0)
+		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			free(str);
 			return (0);
 		}
-		if(_strcmp(cmd[0], "env") == 0)
+		if (_strcmp(cmd[0], "env") == 0)
 		{
 			print_environ(environ);
 			continue;
@@ -55,7 +55,7 @@ int main(int argc, char **argv, char **env)
 		}
 		else
 		{
-			wait(&status);		
+			wait(&status);
 			if ((WIFEXITED(status) && (WEXITSTATUS(status) == 0)))
 			{
 				;

@@ -21,7 +21,7 @@ char **tok(char *str, char *delim)
 	{
 		for (; delim[j] ; j++)
 		{
-			if (delim[j] == str[i] && i > 0 && str[i -1] != delim[j]) 
+			if (delim[j] == str[i] && i > 0 && str[i - 1] != delim[j])
 			{
 				count++;
 			}
