@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 /**
  * main - function that gets the input from the user & executes a command
  * @argc: counter
@@ -11,15 +10,12 @@
  * @env: enviromental variable
  * Return: 0 or 2
  */
-
 int main(int argc, char **argv, char **env)
 {
 	char *str = NULL, **cmd = NULL;
 	size_t len = 1024;
 	int status;
-	(void)argc;
-	(void)argv;
-
+	(void)argc, (void)argv;
 	while (1)
 	{
 		_prompt();
@@ -37,30 +33,22 @@ int main(int argc, char **argv, char **env)
 			free(str);
 			continue;
 		}
-		if(_strcmp(cmd[0], "exit") == 0)
+		if (_strcmp(cmd[0], "exit") == 0)
 		{
 			free(str);
 			return (0);
 		}
-		if(_strcmp(cmd[0], "env") == 0)
+		if (_strcmp(cmd[0], "env") == 0)
 		{
 			print_environ(environ);
 			continue;
 		}
-
 		if (fork() == 0)
 		{
 			if (execve(cmd_discriminator(cmd[0]), cmd, env) == -1)
 				perror("Error");
 		}
-		else
-		{
-			wait(&status);		
-			if ((WIFEXITED(status) && (WEXITSTATUS(status) == 0)))
-			{
-				;
-			}
-		}
+		wait(&status);
 	}
 	free(str);
 	return (status);

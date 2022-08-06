@@ -11,7 +11,6 @@ char **tok(char *str, char *delim)
 {
 	int count = 1;
 	int i = 0, j = 0, k = 0;
-	/*char *str2 = _strdup(str);*/
 	char **arr;
 	char *tok;
 
@@ -39,7 +38,6 @@ char **tok(char *str, char *delim)
 	k++;
 	for (; k < count + 1; k++)
 	{
-		/*arr[k] = _strdup(tok);*/
 		tok = strtok(NULL, delim);
 		arr[k] = tok;
 	}
