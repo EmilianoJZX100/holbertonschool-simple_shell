@@ -49,6 +49,7 @@ int main(int argc, char **argv, char **env)
 				perror("Error");
 		}
 		wait(&status);
+		free(cmd);
 	}
 	free(str);
 	return (status);
