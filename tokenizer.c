@@ -26,7 +26,7 @@ char **tok(char *str, char *delim)
 			}
 		}
 	}
-	arr = malloc(sizeof(char *) * count + 2);
+	arr = malloc(sizeof(char) * 1024);
 	if (!arr)
 	{
 		perror("Error");
@@ -41,12 +41,9 @@ char **tok(char *str, char *delim)
 		tok = strtok('\0', delim);
 		arr[k] = tok;
 	}
-<<<<<<< HEAD
 	arr[k] = NULL;
 	free(tok);
-=======
 	free(tok);
 	arr[k] = '\0';
->>>>>>> d3c5eb8dc01dccd0ae43486c32b3c8b984d3bcf5
 	return (arr);
 }
