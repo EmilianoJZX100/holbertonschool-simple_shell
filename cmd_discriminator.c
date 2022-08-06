@@ -4,7 +4,7 @@
  */
 char *cmd_discriminator(char *s)
 {
-	if (s[0] == '/')
+	if (s[0] == '/' || s[0] == '.')
 	{
 		return(s);
 	}
