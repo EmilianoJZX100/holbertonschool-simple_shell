@@ -24,4 +24,5 @@ void _prompt(void);
 int _reps(char *str, char delim);
 void print_environ(char **buff);
 char *cmd_discriminator(char *s);
+void fork_ex(void);
 #endif
