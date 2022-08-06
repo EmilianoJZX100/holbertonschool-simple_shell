@@ -49,10 +49,9 @@ int main(int argc, char **argv, char **env)
 			print_environ(environ);
 			continue;
 		}
-
 		if (fork() == 0)
 		{
-			f (execve(cmd[0], cmd, env) == -1)
+			if (execve(cmd[0], cmd, env) == -1)
 				perror("Error");
 		}
 		/*else if (fork() == -1)
