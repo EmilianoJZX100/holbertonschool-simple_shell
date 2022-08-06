@@ -48,18 +48,7 @@ int main(int argc, char **argv, char **env)
 			if (execve(cmd_discriminator(cmd[0]), cmd, env) == -1)
 				perror("Error");
 		}
-<<<<<<< HEAD
 		wait(&status);
-=======
-		else
-		{
-			wait(&status);
-			if ((WIFEXITED(status) && (WEXITSTATUS(status) == 0)))
-			{
-				;
-			}
-		}
->>>>>>> 6025dcaa8a02695c7940dc3f317f094dafa29a5e
 	}
 	free(str);
 	return (status);
